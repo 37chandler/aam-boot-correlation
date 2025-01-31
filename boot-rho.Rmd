@@ -55,7 +55,7 @@ software, you're likely to trust your own abilities more. And the bootstrap
 method!
 
 ```{r data-input, message=F}
-d <- read_tsv(paste(here(),"survey_data.txt",sep="/"))
+d <- read_tsv(here("survey_data.txt"))
 
 ```
 
@@ -179,6 +179,10 @@ replicates. So you'll need to sample from `d` with replacement, then
 calculate the correlation coefficient of age and progressivism on this new
 data frame. Store those results by finishing the `for` loop, then I print out 
 10 random values for us. We'll analyze and plot them down below. 
+
+You can do this using the `sample` function, sampling the row numbers of
+the data frame and then selecting those. Or you can use the `dplyr` function
+`sample_n`.
 
 ```{r}
 
